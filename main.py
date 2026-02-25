@@ -63,7 +63,7 @@ def seed_it(seed):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='PTC_MR', help="MUTAG or PTC_MR or PROTEINS")
+    parser.add_argument('--dataset', type=str, default='PTC_MR', help="MUTAG or PTC_MR")
     parser.add_argument('--no-train', default=False)
     parser.add_argument("--epoch", type=int, default=200)
     parser.add_argument("--num_dim", type=int, default=128)
@@ -120,4 +120,5 @@ if __name__ == '__main__':
         final_acc.append(test_acc)
     final_acc = torch.tensor(final_acc)
     print('---------------- Final Result ----------------')
+
     print('Mean: {:7f}, Std: {:7f}'.format(final_acc.mean(), final_acc.std()))
