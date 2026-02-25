@@ -36,7 +36,6 @@ class ToHighOrder(BaseTransform):
         tuples_set = {frozenset(item) for item in tuples_list}
         tuples_list = [set(item) for item in tuples_set]
 
-        #生成二阶边
         triples_set = set()
         edge_index_2 = []
         edge_attr_index_2 = []
@@ -195,4 +194,5 @@ class MyFilter(object):
 
 class MyPreTransform(object):
     def __call__(self, data):
+
         return data
